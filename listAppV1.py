@@ -5,6 +5,7 @@ Program goals:
 5. Put all action in a while loop
 
 """
+import random
 myList = []
  
 def mainProgram():
