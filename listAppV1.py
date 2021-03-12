@@ -12,12 +12,17 @@ def mainProgram():
     while True:
         print("Hello, there! Let's work with lists!")
         print("Please choose from options the following options. Type the number of the choice")
-        choice = input("1. Add to a list, 2. Return a vaule at a list, or 3. Quit  ")
+        choice = input("""1. Add to a list,
+2. Return a vaule at a list,
+3. Random Search
+4. Quit  """)
         if choice == "1":
             addToList()
         elif choice == "2":
             indexValues()
         elif choice == "3":
+            randomSearch()
+        else:
             break
     
 
@@ -27,10 +32,14 @@ def addToList():
     myList.append(int(newItem))
     #we need to think about errors!
 
+def randomSearch():
+    print(" oH iM sO rAnDom!!!")
+    print(myList[random.randit(0, len(myList)-1)])
+
 def indexValues():
     print("At what index position do you want to search?")
     indexPos = input("Type an index position here:    ")
     print(myList[int(indexPos)])
     
-if __name__ =="_main_":
+if __name__ =="__main__":
     mainProgram()
