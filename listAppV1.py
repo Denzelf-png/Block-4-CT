@@ -7,6 +7,7 @@ Program goals:
 """
 import random
 myList = []
+unique_list = []
  
 def mainProgram():
     #Build our while loop
@@ -18,8 +19,9 @@ def mainProgram():
 3. Add a bunch or numbers!
 4. Random Search
 5. Linear Search
-6. Print List
-7. Quit  """)
+6. Sort List
+7. Print Lists
+8. Quit  """)
         if choice == "1":
             addToList()
         elif choice == "2":
@@ -31,7 +33,10 @@ def mainProgram():
         elif choice == "5":
             linearSearch()
         elif choice == "6":
-            print(myList)
+            sortList(myList)
+        elif choice == "7":
+            printLists()
+          
         else:
             break
     
@@ -50,6 +55,16 @@ def addABunch():
         myList.append(random.randint(0, int(numRange)))
     print("Your list is complete!")
 
+def sortList(myList):
+    #"myList" is the ARGUMENT this function takes.
+    for x in myList:
+        if x not in unique_list:
+            unique_list.append(x)
+    unique_list.sort()
+    showMe = input("Wanna see your new, sorted list?  Y/N")
+    if showMe.lower() =="y":
+        print(unique_list)
+
 def randomSearch():
     print(" oH iM sO rAnDom!!!")
     print(myList[random.randint(0, len(myList)-1)])
@@ -65,6 +80,15 @@ def indexValues():
     print("At what index position do you want to search?")
     indexPos = input("Type an index position here:    ")
     print(myList[int(indexPos)])
+
+def printLists():
+    if len(unique_list) == 0:
+        print(myList)
+    else:
+        whichOne = input("Which list o yo want to see? Sorted or un-Sorted?  ")
+        if whichOne.lower() == "sorted":
+            print(unique_list)
+
     
 if __name__ =="__main__":
     mainProgram()
