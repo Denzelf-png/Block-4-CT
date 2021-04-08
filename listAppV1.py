@@ -46,6 +46,9 @@ def mainProgram():
                 binSearch = input("What number are you looking for?  ")
                 recursiveBinarySearch(unique_list, 0, len(unique_list)-1, int(binSearch))
             elif choice == "8":
+                SearchItem = input("What are you looking for?  ")
+                recuriveBinarySearch(unique_lit, 0, len(unique_lit)-1, int(searchItem)
+                                     
                 binSearch = input("What number are you looking for?  ")
                 result = iterativeBinarySearch(unique_list, int(binSearch))
                 if result != -1:
@@ -131,7 +134,7 @@ def iterativeBinarySearch(unique_list, x):
     mid = 0
 
     while low <= high:
-        mid = (high + low) //2
+        mid = (high + low) // 2
 
         if unique_list[mid] < x:
             low = mid + 1
