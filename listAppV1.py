@@ -30,33 +30,33 @@ def mainProgram():
 8. Iterative Binary Search
 9. Print List
 10. Quit  """)
-    if choice == "1":
-        addToList()
-    elif choice == "2":
-        addABunch()
-    elif choice == "3":
-        indexValues()
-    elif choice == "4":
-        sortList(myList)
-    elif choice == "5":
-        randomSearch()
-    elif choice == "6":
-        linearSearch()
-    elif choice == "7":
-        binSearch = input("What number are you looking for?  ")
-        recursiveBinarySearch(unique_list, 0, len(unique_list)-1, int(binSearch))
-    elif choice == "8":
-        binSearch = input("What number are you looking for?  ")
-        result = iterativeBinarySearch(unique_list, int(binSearch))
-        if result != -1:
-            print("Your number is at index position ()".format(result))
-        else:
-            print("Your number is not found in that list, bud!")
+            if choice == "1":
+                addToList()
+            elif choice == "2":
+                addABunch()
+            elif choice == "3":
+                indexValues()
+            elif choice == "4":
+                sortList(myList)
+            elif choice == "5":
+                randomSearch()
+            elif choice == "6":
+                linearSearch()
+            elif choice == "7":
+                binSearch = input("What number are you looking for?  ")
+                recursiveBinarySearch(unique_list, 0, len(unique_list)-1, int(binSearch))
+            elif choice == "8":
+                binSearch = input("What number are you looking for?  ")
+                result = iterativeBinarySearch(unique_list, int(binSearch))
+                if result != -1:
+                    print("Your number is at index position ()".format(result))
+                else:
+                    print("Your number is not found in that list, bud!")
 
-    elif choice == "9":
-        printLists()
-    else:
-        break
+            elif choice == "9":
+                printLists()
+            else:
+                breakpoint
          
 
 def addToList():
