@@ -14,6 +14,23 @@ Program goals:
 import random
 myList = []
 unique_list = []
+
+def greet(name, msg="Good Morning!"):
+    """
+    This function greets to
+    the person with the
+    provided message.
+
+    If the message is not provided,
+    it defaults to "Good
+    morning!"
+    """
+
+    print("Hello, Denzel Welcome to your List app!")
+
+
+greet("Denzel")
+greet("Denzel", "How do you do?")
  
 def mainProgram():
     #Build our while loop
@@ -33,22 +50,21 @@ def mainProgram():
             if choice == "1":
                 addToList()
             elif choice == "2":
-                addABunch()
+                copyList()
             elif choice == "3":
-                indexValues()
+                addABunch()
             elif choice == "4":
-                sortList(myList)
+                indexValues()
             elif choice == "5":
-                randomSearch()
+                sortList(myList)
             elif choice == "6":
-                linearSearch()
+                randomSearch()
             elif choice == "7":
+                linearSearch()
+            elif choice == "8":
                 binSearch = input("What number are you looking for?  ")
                 recursiveBinarySearch(unique_list, 0, len(unique_list)-1, int(binSearch))
-            elif choice == "8":
-                SearchItem = input("What are you looking for?  ")
-                recuriveBinarySearch(unique_lit, 0, len(unique_lit)-1, int(searchItem)
-                                     
+            elif choice == "9":                   
                 binSearch = input("What number are you looking for?  ")
                 result = iterativeBinarySearch(unique_list, int(binSearch))
                 if result != -1:
@@ -56,7 +72,7 @@ def mainProgram():
                 else:
                     print("Your number is not found in that list, bud!")
 
-            elif choice == "9":
+            elif choice == "10":
                 printLists()
             else:
                 breakpoint
@@ -86,6 +102,9 @@ def sortList(myList):
     if showMe.lower() =="y":
         print(unique_list)
 
+def copyList():
+    print("List is copied!")
+
 def indexValues():
     print("At what index position do you want to search?")
     indexPos = input("Type an index position here:    ")
@@ -104,6 +123,10 @@ def LinearSearch():
         if myList[x] == int(searchValues):
          print("Your item is at index position {}".format(x))
 
+my_list = []
+if not len(my_list):
+    print("the list is empty")
+
 def printLists():
     if len(unique_list) == 0:
         print(myList)
@@ -111,6 +134,13 @@ def printLists():
         whichOne = input("Which list do you want to see? Sorted or un-Sorted?  ")
         if whichOne.lower() == "sorted":
             print(unique_list)
+
+def all(iterable):
+    for element in iterable:
+        if not element:
+            return False
+    return True
+
 
 def recursiveBinarySearch(unique_list, low, high, x):
     if high >= low:
@@ -144,8 +174,11 @@ def iterativeBinarySearch(unique_list, x):
         else:
             return mid
     return -1
+
+ 
+
+
             
-    
 if __name__ =="__main__":
     mainProgram()
 
