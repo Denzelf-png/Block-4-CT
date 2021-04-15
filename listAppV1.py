@@ -11,10 +11,12 @@ Program goals:
     c. Binary Search (2 types)
     
 """
+#import random imports the random module, which contains a variety of things to do with random number generation. Among these is the random() function, which generates random numbers between 0 and 1. This allows you to then just call random() directly
 import random
 myList = []
 unique_list = []
 
+# this is a greetinng def is short for “define” def greet(person_name) # begin definition puts "Hello, #{person_name}, nice to see you!" end # end definition greet("Alex") #=> Hello, Alex, nice to see you!
 def greet(name, msg="Good Morning!"):
     """
     This function greets to
@@ -31,7 +33,8 @@ def greet(name, msg="Good Morning!"):
 
 greet("Denzel")
 greet("Denzel", "How do you do?")
- 
+
+#this fuction defines the main program, We put a “while true” statement after this because a while true loop runs forever and is used to iterate over a block of code as long as the test expression (condition) is true.
 def mainProgram():
     #Build our while loop
     while True:
@@ -47,6 +50,7 @@ def mainProgram():
 8. Iterative Binary Search
 9. Print List
 10. Quit  """)
+            # To obtain the user’s choice we first  have to use if, elif, and else statements. Each choice uses an “elif statement”  from the inputs of the users. Now we add a break statement we use this because else statements don’t stop until it’s told to “break”.
             if choice == "1":
                 addToList()
             elif choice == "2":
@@ -77,13 +81,14 @@ def mainProgram():
             else:
                 breakpoint
          
-
+#Def Add To List is defining the add to list function. First prints a statement “Adding to a list: Great choice!". Now we add new item = = input ("Type an integer here!  ") this takes the user inputs of the numbers chosen before and add it to a list. Than myList.append(int(newItem)) adds adds a single integer  to the existing list of new items.
 def addToList():
     print("Adding to a list: Great choice!")
     newItem = input("Type an integer here!  ")
     myList.append(int(newItem))
     #we need to think about errors!
-
+    
+# Def addABunch is defining the add a bunch function. First it prints a statement to the user "We're gonna add a bunch of numbers to your lists!". Now we add Num to add which add the numbers into the list the program ask the user what numbers they would like to add and  how high the user would like these numbers to go.  Now we add for x in range (0, int(num To Add)): this means for each value of x in range of the integer from the list of num to add. Now we add myList.append(random.randint(0, int(numRange))) this adds  a single item to the existing list of num to a and  the random.randint method returns an integer number selected element from the specified range. This number are from the user choice that are taken from the list num to add. Then it prints a statement to the user “your list is complete”.
 def addABunch():
     print("We're gonna add a bunch of numbers to your lists!")
     numToAdd = input("How many new integers would you like to add?  ")
@@ -91,7 +96,7 @@ def addABunch():
     for x in range(0, int(numToAdd)):
         myList.append(random.randint(0, int(numRange)))
     print("Your list is complete!")
-
+#
 def sortList(myList):
     #"myList" is the ARGUMENT this function takes.
     for x in myList:
@@ -101,21 +106,25 @@ def sortList(myList):
     showMe = input("Wanna see your new, sorted list?  Y/N")
     if showMe.lower() =="y":
         print(unique_list)
-
+        
+#this unction deines the copyList which copies a lit and print a tament o the uer hat the lit is copied.
 def copyList():
     print("List is copied!")
-
+    
+#Def Index Values is defining the index value function. First it prints a testament to the user "At what index position do you want to search?".  Next we add indexPos = input("Type an index position here: " which asks  the user to type an index position in the list. Next we add print(myList[int(indexPos)]) this means it program prints my lists and ad the integer chosen into the index position.
 def indexValues():
     print("At what index position do you want to search?")
     indexPos = input("Type an index position here:    ")
     print(myList[int(indexPos)])
-
+    
+#Def Random Search is defining the random search function. First it prints a treatment to the user " oH i'M sO rAnDom!!!"  than it prints myList[random.randint(0, len(myList)-1)]) which imports random integers choose a number between 0 and the length of the list (board) minus 1.
 def randomSearch():
     print(" oH iM sO rAnDom!!!")
     print(myList[random.randint(0, len(myList)-1)])
     if len(unique_list) > 0:
         print(unique_list[random.randint(0, len(unique_list)-1)])
         
+#First it prints a statement ("We're going to go through this list one item at a time!") to the user. Than we search value and it ask for the user input by asking the user "what are you looking for? ". Than we put for x in range (len(myLists)): this means for each value of x in range of the length of 0 and the length of the list (myLists). Than we put myList[        
 def LinearSearch():
     print("We're going to go through this list one item at a time!")
     searchValue = input("what are you looking for?    ")
@@ -126,7 +135,8 @@ def LinearSearch():
 my_list = []
 if not len(my_list):
     print("the list is empty")
-
+    
+#This denine he print list unction whuch prints he list we than put an if statment statng if the lenght of unqiue list is 0 that print to the user my list, than we have an else statment stating if anything else do you want the list sorted or unsorted.
 def printLists():
     if len(unique_list) == 0:
         print(myList)
@@ -134,14 +144,18 @@ def printLists():
         whichOne = input("Which list do you want to see? Sorted or un-Sorted?  ")
         if whichOne.lower() == "sorted":
             print(unique_list)
-
+            
+#: An iterable is any Python object capable of returning its members one at a time, permitting it to be iterated over in a for-loop. Familiar examples of iterables include lists, tuples, and strings - any such sequence can be iterated over in a for-loop.
 def all(iterable):
     for element in iterable:
         if not element:
             return False
     return True
 
-
+#this unction deines the recurvise binary erach Recursive binary search is an implementation of the binary search algorithm that uses recursive method calls (instead of iteratively searching for the item within a single method call).Compare x with the middle element.
+#If x matches with middle element, we return the mid index.
+#Else If x is greater than the mid element, then x can only lie in right half subarray after the mid element. So we recur for right half.
+#Else (x is smaller) recur for the left half.
 def recursiveBinarySearch(unique_list, low, high, x):
     if high >= low:
         mid = (high + low) // 2
@@ -157,7 +171,8 @@ def recursiveBinarySearch(unique_list, low, high, x):
             return recursiveBinarySearch(unique_list, mid + 1, high, x)
     else:
         print("Your number isn't here!")
-
+        
+#This function deine the iterative binary serach, If x matches with middle element, we return the mid index. Else If x is greater than the mid element, then x can only lie in right half subarray after the mid element. So we recur for right half.Else (x is smaller) recur for the left half.
 def iterativeBinarySearch(unique_list, x):
     low = 0
     high = len(unique_list)-1
@@ -175,10 +190,9 @@ def iterativeBinarySearch(unique_list, x):
             return mid
     return -1
 
- 
 
 
-            
+#We can use an if __name__ == "__main__" block to allow or prevent parts of code from being run when the modules are imported. When the Python interpreter reads a file, the __name__ variable is set as __main__ if the module being run, or as the module's name if it is imported.           
 if __name__ =="__main__":
     mainProgram()
 
